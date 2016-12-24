@@ -1,7 +1,7 @@
 # WeatherBar
 
 ## What is it?
-This is a simple and light macOS weather app, made by '[footle.org][00]' for tutorial. 
+This is a simple and light macOS weather app, made by '[footle.org][00a]' for tutorial. 
 
 > To be able to run the app properly, you need to sign up an account at [OpenWeatherMap][00b] and retrieve an unique API key. (See line 28 at `WeatherAPI.swift`)
 

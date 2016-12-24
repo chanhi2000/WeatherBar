@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11542"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
+            <connections>
+                <outlet property="delegate" destination="Voe-Tx-rLC" id="GzC-gU-4Uq"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="WeatherBar" customModuleProvider="target">
+            <connections>
+                <outlet property="quitClicked" destination="FAf-49-r74" id="9I3-hG-a4e"/>
+                <outlet property="statusMenu" destination="dgl-eR-jWG" id="VBm-iY-yJT"/>
+            </connections>
+        </customObject>
+        <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+        <customObject id="yxd-cT-YKl" userLabel="StatusMenuController" customClass="StatusMenuController" customModule="WeatherBar" customModuleProvider="target">
+            <connections>
+                <outlet property="statusMenu" destination="dgl-eR-jWG" id="KaV-Rl-9fR"/>
+                <outlet property="updateClicked" destination="QVY-x3-RX8" id="cwO-m8-SDV"/>
+                <outlet property="weatherView" destination="gFC-v4-Nbs" id="56l-H6-hwH"/>
+            </connections>
+        </customObject>
+        <menu id="dgl-eR-jWG" userLabel="Status Menu">
+            <items>
+                <menuItem title="Update" id="QVY-x3-RX8" userLabel="Update">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="updateClicked:" target="yxd-cT-YKl" id="Zuj-hC-0Tv"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="LDV-4F-2Vy"/>
+                <menuItem title="Weather" id="XbW-KY-qg8">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="VQR-co-23b"/>
+                <menuItem title="Quit" id="FAf-49-r74" userLabel="Quit">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="quitClicked:" target="yxd-cT-YKl" id="aJ3-tN-Vmb"/>
+                    </connections>
+                </menuItem>
+            </items>
+            <point key="canvasLocation" x="43.5" y="184.5"/>
+        </menu>
+        <customView id="gFC-v4-Nbs" userLabel="WeatherView" customClass="WeatherView" customModule="WeatherBar" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="268" height="96"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4XX-op-SbN">
+                    <rect key="frame" x="20" y="23" width="50" height="50"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="05b-uG-FRK"/>
+                </imageView>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YEN-Hj-6pW" userLabel="City">
+                    <rect key="frame" x="76" y="56" width="28" height="17"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="City" id="Aqg-ww-A6g" userLabel="City">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mcE-mm-6rK">
+                    <rect key="frame" x="74" y="23" width="176" height="17"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Temperature and Conditions" id="2do-JI-Ceu">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <connections>
+                <outlet property="cityTextField" destination="YEN-Hj-6pW" id="Ci6-rc-OLl"/>
+                <outlet property="currentConditionsTextField" destination="mcE-mm-6rK" id="o7g-rV-mXZ"/>
+                <outlet property="imageView" destination="4XX-op-SbN" id="6Id-ZS-0e8"/>
+            </connections>
+            <point key="canvasLocation" x="105" y="41"/>
+        </customView>
+    </objects>
+</document>

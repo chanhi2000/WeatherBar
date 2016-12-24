@@ -1,0 +1,7 @@
+# Mac OS X
+*.DS_Store
+
+# Xcode
+WeatherBar/*.xcuserstate
+WeatherBar.xcodeproj/xcuserdata
+WeatherBar.xcodeproj/project.xcworkspace
